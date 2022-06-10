@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<mavlink>
+    <enums>
+	<enum name="RSRTX_OPT_DEV_ENUM">
+	    <description>which port send to or receive</description>
+	    <entry value="0" name="DEV_TTYS0">
+	    	<description>/dev/ttyS0</description></entry>
+	    <entry value="1" name="DEV_TTYS1">
+		    <description>/dev/ttyS1</description></entry>
+	    <entry value="2" name="DEV_TTYS2">
+		    <description>/dev/ttyS2</description></entry>
+	    <entry value="3" name="DEV_TTYS3">
+		    <description>/dev/ttyS3</description></entry>
+	    <entry value="4" name="DEV_TTYS4">
+		    <description>/dev/ttyS4</description></entry>
+	    <entry value="5" name="DEV_TTYS5">
+		    <description>/dev/ttyS5</description></entry>
+	    <entry value="6" name="DEV_TTYS6">
+		    <description>/dev/ttyS6</description></entry>
+	</enum>
+    </enums>
+
+    <messages>
+    <!--从地面站到无人机-->
+	<message id="211" name="RTX_GCS2UAV">
+	    <description>Message form GCS to UAV</description>
+ 	    <field type="uint8_t" name="dev">which port send to ,see RSRTX_OPT_DEV_ENUM</field>
+	    <field type="uint8_t" name="len">pkg lenght , 250 max</field>
+	    <field type="uint8_t[250]" name="data">data payload</field>
+	</message>
+    <!--从无人机到地面站-->
+    <message id="213" name="RTX_UAV2GCS">
+	<description>Message form UAV to GCS</description>
+    	<field type="uint8_t" name="dev">which port send this pkg,see RSRTX_OPT_DEV_ENUM</field>
+	<field type="uint8_t" name="len">pkg lenght , 250 max</field>
+	<field type="uint8_t[250]" name="data">data payload</field></message>
+    </messages>
+</mavlink>
+

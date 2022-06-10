@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<mavlink>
+  <version>3</version>
+  <messages>
+    <message id="223" name="READ_UART_SENSOR">
+      <description>READ_UART_SENSOR</description>
+      <field type="char[20]" name="voltage_str">string</field>
+      <field type="char[20]" name="current_str">string</field>
+      <field type="char[20]" name="temperature_str">string</field>
+      <field type="char[20]" name="quantity_str">string</field>
+      <field type="char[20]" name="remaining_str">string</field>
+
+      <field type="float" name="voltage_sensor">float</field>
+      <field type="float" name="current_sensor">float</field>
+      <field type="float" name="temperature_sensor">float</field>
+      <field type="float" name="quantity_sensor">uint32_t</field>
+      <field type="float" name="remaining_sensor">uint32_t</field>
+    </message>
+  </messages>
+</mavlink>
+
+
